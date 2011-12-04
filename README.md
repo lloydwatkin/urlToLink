@@ -1,6 +1,6 @@
 # urlToLink jQuery Plugin
 
-A jQuery plugin that transforms URLs in text into HTML <a> elements.
+A jQuery plugin that transforms URLs in text into HTML `<a>` elements.
 
 
 ## How to use
@@ -19,7 +19,7 @@ You can change the default parameters by calling `$.fn.urlToLink.defaults` anywh
 
 ## License
 
-This plugin was inspired by Hugo Dias's snippet at [http://goo.gl/pptTi](http://goo.gl/pptTi)
+This plugin was inspired by Hugo Dias's snippet at http://goo.gl/pptTi
 
 Copyright (c) 2011 [Gabriel Izaias](gabrielizaias.com)
 Dual licensed under the MIT and GPL licenses:
