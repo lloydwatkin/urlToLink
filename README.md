@@ -13,7 +13,8 @@ Simple usage:
 Changing the parameters:
 `$('p').urlToLink({target:'_blank'});`
 
-You can change the default parameters by calling `$.fn.urlToLink.defaults` anywhere in your script and passing an array to it. Example:
+You can change the default parameters by calling `$.fn.urlToLink.defaults` anywhere in your script and passing an array to it. 
+Example:
 `$.fn.urlToLink.defaults = { target:'_blank'}`
 
 
