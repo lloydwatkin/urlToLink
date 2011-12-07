@@ -35,10 +35,8 @@
 	$.fn.urlToLink = function(options) {
 		var options = $.extend({}, $.fn.urlToLink.defaults, options); 
 	    return this.each(function(){
-	        var element = $(this),
-	        	expression = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
 	        // The magic
-	        return element.html( element.text().replace(expression, "<a href='$1' target='"+options.target+"'>$1</a>") );
+	        $(this).html( $(this).html().replace(/\s(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, " <a href='$1' target='"+options.target+"'>$1</a>") );
 	    });
 	}
 	/**
