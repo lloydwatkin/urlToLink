@@ -32,17 +32,16 @@
  *
  */
 (function($){
-	$.fn.urlToLink = function(options) {
-		var options = $.extend({}, $.fn.urlToLink.defaults, options); 
-	    return this.each(function(){
-	        // The magic
-	        $(this).html( $(this).html().replace(/\s(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, " <a href='$1' target='"+options.target+"'>$1</a>") );
-	    });
-	}
-	/**
-	 * Default configuration
-	 */
-	$.fn.urlToLink.defaults = {
-		target : '_self' 		// Link target
-	}
+    $.fn.urlToLink = function(options) {
+        var options = $.extend({}, $.fn.urlToLink.defaults, options); 
+        return this.each(function(){
+            $(this).html( $(this).html().replace(/\s(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, " <a href='$1' target='"+options.target+"'>$1</a>") );
+        });
+    }
+    /**
+     * Default configuration
+     */
+    $.fn.urlToLink.defaults = {
+        target : '_self'        // Link target
+    }
 })(jQuery)
