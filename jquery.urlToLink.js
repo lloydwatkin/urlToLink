@@ -22,8 +22,8 @@
  *
  * LICENSE
  *
- * This plugin was inspired by Hugo Dias's snippet at
- * http://goo.gl/pptTi
+ * This plugin was inspired by John Gruber's regex at
+ * http://daringfireball.net/2010/07/improved_regex_for_matching_urls
  *
  * Copyright (c) 2011 Gabriel Izaias (gabrielizaias.com)
  * Dual licensed under the MIT and GPL licenses:
@@ -32,10 +32,15 @@
  *
  */
 (function($){
+    var linkMatchingRegEx = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/ig
+    
     $.fn.urlToLink = function(options) {
         var options = $.extend({}, $.fn.urlToLink.defaults, options); 
         return this.each(function(){
-            $(this).html( $(this).html().replace(/\s(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, " <a href='$1' target='"+options.target+"'>$1</a>") );
+            $(this).html($(this).html().replace(
+                linkMatchingRegEx, 
+                " <a href='$1' target='" + options.target + "'>$1</a>"
+            ))
         });
     }
     /**
