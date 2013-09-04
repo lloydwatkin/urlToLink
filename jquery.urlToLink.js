@@ -38,8 +38,24 @@
         var options = $.extend({}, $.fn.urlToLink.defaults, options); 
         return this.each(function(){
             $(this).html($(this).html().replace(
-                linkMatchingRegEx, 
-                " <a href='$1' target='" + options.target + "'>$1</a>"
+                linkMatchingRegEx,
+                function( match, contents, offset, s ) {
+                    var href = match
+                    if ( options.removeHttp ) {
+                        href = href.replace("http://", "").replace("https://", "")
+                    }
+                    var linkText = href
+                    if ( options.compressTo ) {
+                        if ( href.length > options.compressTo ) {
+                            var lengthToSplit = ( options.compressTo - options.compressWith.length ) / 2
+                            linkText = href.substring(0, lengthToSplit)+
+                                    options.compressWith+
+                                    href.slice(-lengthToSplit)
+                        }   
+                    }
+                    
+                    return ' <a href="'+match+'" title="'+match+'" target="' + options.target + '">'+linkText+'</a>'
+                }
             ))
         });
     }
@@ -47,6 +63,7 @@
      * Default configuration
      */
     $.fn.urlToLink.defaults = {
-        target : '_self'        // Link target
+        target : '_self', // Link target
+        compressWith: '...'
     }
 })(jQuery)
