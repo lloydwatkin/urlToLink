@@ -71,6 +71,6 @@
      */
     $.fn.urlToLink.defaults = {
         target : '_self', // Link target
-        compressWith: '...'
+        compressWith: '&hellip;'
     }
 })(jQuery)
