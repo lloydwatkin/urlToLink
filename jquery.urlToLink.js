@@ -7,17 +7,17 @@
  * Result:  Lorem ipsum dolor sit amet consecter adpsim elit <a href="http://loremipsum.com">http://loremipsum.com</a>
  *
  * HOW TO USE
- * 
- * Assuming that you have already inserted jquery.js and jquery.urlToLink.js in your code 
+ *
+ * Assuming that you have already inserted jquery.js and jquery.urlToLink.js in your code
  * and that $ is your jQuery object reference.
  *
  * Simple usage:
  * $('p').urlToLink();
  *
- * Changing the parameters: 
+ * Changing the parameters:
  * $('p').urlToLink({target:'_blank'});
- * 
- * You can change the default parameters by calling 
+ *
+ * You can change the default parameters by calling
  * $.fn.urlToLink.defaults anywhere in your script.
  *
  * LICENSE
@@ -33,9 +33,9 @@
  */
 (function($){
     var linkMatchingRegEx = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/ig
-    
+
     $.fn.urlToLink = function(options) {
-        var options = $.extend({}, $.fn.urlToLink.defaults, options); 
+        var options = $.extend({}, $.fn.urlToLink.defaults, options);
         return this.each(function(){
             $(this).html($(this).html().replace(
                 linkMatchingRegEx,
@@ -51,9 +51,9 @@
                             linkText = href.substring(0, lengthToSplit)+
                                     options.compressWith+
                                     href.slice(-lengthToSplit)
-                        }   
+                        }
                     }
-                    
+
                     return ' <a href="'+match+'" title="'+match+'" target="' + options.target + '">'+linkText+'</a>'
                 }
             ))
