@@ -31,34 +31,41 @@
  * http://www.gnu.org/licenses/gpl.html
  *
  */
-(function($){
+(function ($) {
+    "use strict";
+
     var linkMatchingRegEx = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'".,<>?«»“”‘’]))/ig
 
-    $.fn.urlToLink = function(options) {
-        var options = $.extend({}, $.fn.urlToLink.defaults, options);
-        return this.each(function(){
+    $.fn.urlToLink = function (options) {
+        options = $.extend({}, $.fn.urlToLink.defaults, options);
+        return this.each(function () {
             $(this).html($(this).html().replace(
                 linkMatchingRegEx,
-                function( match, contents, offset, s ) {
-                    var href = match
-                    if ( options.removeHttp ) {
+                function (match, contents, offset, s) {
+                    var href = match,
+                        linkText = '',
+                        lengthToSplit = 0;
+
+                    if (options.removeHttp)
                         href = href.replace("http://", "").replace("https://", "")
-                    }
-                    var linkText = href
-                    if ( options.compressTo ) {
-                        if ( href.length > options.compressTo ) {
-                            var lengthToSplit = ( options.compressTo - options.compressWith.length ) / 2
-                            linkText = href.substring(0, lengthToSplit)+
-                                    options.compressWith+
-                                    href.slice(-lengthToSplit)
+
+                    linkText = href
+
+                    if (options.compressTo) {
+                        if (href.length > options.compressTo) {
+                            lengthToSplit = (options.compressTo - options.compressWith.length) / 2
+                            linkText = href.substring(0, lengthToSplit) +
+                                        options.compressWith +
+                                        href.slice(-lengthToSplit)
                         }
                     }
 
-                    return ' <a href="'+match+'" title="'+match+'" target="' + options.target + '">'+linkText+'</a>'
+                    return ' <a href="' + match + '" title="' + match + '" target="' + options.target + '">' + linkText + '</a>'
                 }
             ))
         });
     }
+
     /**
      * Default configuration
      */
