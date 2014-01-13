@@ -1,37 +1,42 @@
 {
-    "name": "urlToLink",
-    "title": "jQuery urlToLink Plugin",
-    "description": "A jQuery plugin that transforms URLs in text into HTML <a> elements.",
-    "version": "1.0.1",
-    "author": {
-        "name": "Gabriel Izaias",
-        "url": "http://gabrielizaias.com"
-    },
-    "maintainers": [
-      {
-        "name": "Gabriel Izaias",
-        "email": "gabriel.izaias@gmail.com",
-        "url": "http://gabrielizaias.com"
-      }
-    ],
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://opensource.org/licenses/mit-license.php"
-        },
-        {
-            "type": "GPL",
-            "url": "http://www.gnu.org/licenses/gpl.html"
-        }
-    ],
-    "keywords": [
-        "link",
-        "regex"
-    ],
-    "bugs": "https://github.com/gabrielizaias/urlToLink/issues",
-    "homepage": "https://github.com/gabrielizaias/urlToLink",
-    "docs": "https://github.com/gabrielizaias/urlToLink",
-    "dependencies": {
-        "jquery": ">=1.2"
+  "name": "urlToLink",
+  "title": "jQuery urlToLink Plugin",
+  "description": "A jQuery plugin that transforms URLs in text into HTML <a> elements.",
+  "version": "1.0.1",
+  "author": {
+    "name": "Gabriel Izaias",
+    "url": "http://gabrielizaias.com"
+  },
+  "maintainers": [
+    {
+      "name": "Gabriel Izaias",
+      "email": "gabriel.izaias@gmail.com",
+      "url": "http://gabrielizaias.com"
     }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/mit-license.php"
+    },
+    {
+      "type": "GPL",
+      "url": "http://www.gnu.org/licenses/gpl.html"
+    }
+  ],
+  "keywords": [
+    "link",
+    "regex"
+  ],
+  "bugs": "https://github.com/gabrielizaias/urlToLink/issues",
+  "homepage": "https://github.com/gabrielizaias/urlToLink",
+  "docs": "https://github.com/gabrielizaias/urlToLink",
+  "dependencies": {
+    "jquery": ">=1.2"
+  },
+  "devDependencies": {
+    "gulp": "~3.3.1",
+    "gulp-rename": "~0.2.1",
+    "gulp-uglify": "~0.1.0"
+  }
 }
