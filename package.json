@@ -7,6 +7,10 @@
     "name": "Gabriel Izaias",
     "url": "http://gabrielizaias.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielizias/urlToLink.git"
+  },
   "maintainers": [
     {
       "name": "Gabriel Izaias",
