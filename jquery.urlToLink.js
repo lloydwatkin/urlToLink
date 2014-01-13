@@ -70,7 +70,9 @@
      * Default configuration
      */
     $.fn.urlToLink.defaults = {
-        target : '_self', // Link target
+        // Link target
+        target : '_self',
+        // Text to add when compressedTo is set
         compressWith: '&hellip;'
     }
 })(jQuery)
