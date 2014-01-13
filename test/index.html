@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta charset=utf-8>
+<title>URL To Link</title>
+<style>
+    table { width: 400px; }
+    th { text-align: right; }
+</style>
+<h1>jQuery urlToLink Example</h1>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>With http://</th>
+        <td class="url-to-link">http://google.com</td>
+    </tr>
+    <tr>
+        <th>Without http://</th>
+        <td class="url-to-link">google.com</td>
+    </tr>
+    <tr>
+        <th>With <i>target:_blank</i></th>
+        <td class="blank">http://google.com</td>
+    </tr>
+    <tr>
+        <th>Compressed with "&hellip;"</th>
+        <td class="compressed">https://github.com/gabrielizaias/urlToLink/issues</td>
+    </tr>
+</table>
+
+<p>This should be a link anyway (without plugin): <a href="http://example.com">http://example.com</a></p>
+<p>This should <i>not</i> be a link: http://loremipsum.com </p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../jquery.urlToLink.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('a').bind('click', function(e){
+        e.preventDefault();
+        alert('CLICK!');
+    });
+
+    $('.url-to-link').urlToLink();
+    $('.blank').urlToLink({ target : '_blank' });
+    $('.compressed').urlToLink({ compressTo : 35 });
+});
+</script>
