@@ -5,8 +5,6 @@ A jQuery plugin that transforms URLs in text into HTML `<a>` elements.
 
 ## How to use
 
-<b>ATTENTION</b>: This plugin erases the event bindings of the element and its children. Use it only on elements that you are sure won't affect the overall behavior of your application.
-
 Assuming that you have already inserted jquery.js and jquery.urlToLink.js in your code and that `$` is your jQuery object reference.
 
 Simple usage:<br />
