@@ -22,7 +22,8 @@ Example:<br />
 
 ## License
 
-This plugin was inspired by Hugo Dias's snippet at http://goo.gl/pptTi
+This plugin was inspired by John Gruber's regex at
+http://daringfireball.net/2010/07/improved_regex_for_matching_urls
 
 Copyright (c) 2011 [Gabriel Izaias](gabrielizaias.com)<br />
 Dual licensed under the MIT and GPL licenses:<br />
