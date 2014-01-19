@@ -13,14 +13,14 @@ gulp.task('compress', function () {
 
 gulp.task('bump', function (params) {
     "use strict";
-    gulp.src('./package.json')
+    gulp.src(['./package.json', './urlToLink.jquery.json'])
         .pipe(bump())
         .pipe(gulp.dest('./'));
 })
 
 gulp.task('bump:minor', function () {
     "use strict";
-    gulp.src('./package.json')
+    gulp.src(['./package.json', './urlToLink.jquery.json'])
         .pipe(bump({
             type : 'minor'
         }))
@@ -29,7 +29,7 @@ gulp.task('bump:minor', function () {
 
 gulp.task('bump:major', function () {
     "use strict";
-    gulp.src('./package.json')
+    gulp.src(['./package.json', './urlToLink.jquery.json'])
         .pipe(bump({
             type : 'major'
         }))
