@@ -2,7 +2,7 @@
     "name": "urlToLink",
     "title": "jQuery urlToLink Plugin",
     "description": "A jQuery plugin that transforms URLs in text into HTML <a> elements.",
-    "version": "1.0.1",
+    "version": "1.2.0",
     "author": {
         "name": "Gabriel Izaias",
         "url": "http://gabrielizaias.com"
