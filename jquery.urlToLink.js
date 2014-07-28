@@ -63,6 +63,9 @@
                                         href.slice(-lengthToSplit)
                         }
                     }
+                    
+                    if (options.forcePrefix && !match.match(/^https?\:.*/)) {
+                        match = 'http://' + match
 
                     return ' <a href="' + match + '" title="' + match +
                         '" target="' + options.target + '">' +
